@@ -104,6 +104,11 @@ DEMO_USERS: dict[str, dict[str, Any]] = {
                 "qa_id": 1,
                 "question": "FlashAttentionの革新的な点は？",
                 "answer": "Attentionの中間行列をできるだけ保存せず、メモリアクセスを減らす点。",
+                "explanation": (
+                    "通常のAttentionは巨大なスコア行列をメモリに置くため、GPUのHBMとの"
+                    "データ移動が重くなります。FlashAttentionはタイル単位で計算し、必要な値だけを"
+                    "保持することで、同じ結果をより少ないメモリ移動で求めます。"
+                ),
                 "subject_id": 1,
                 "memo_id": 1,
             },
@@ -111,6 +116,11 @@ DEMO_USERS: dict[str, dict[str, Any]] = {
                 "qa_id": 2,
                 "question": "Self-Attentionで使う3つのベクトルは？",
                 "answer": "Query、Key、Value。",
+                "explanation": (
+                    "Queryは今見ているトークンが探したい情報、Keyは各トークンが持つ検索用の特徴、"
+                    "Valueは実際に集約される内容です。QueryとKeyの類似度で重みを作り、Valueを"
+                    "重み付きで足し合わせます。"
+                ),
                 "subject_id": 2,
                 "memo_id": 3,
             },
@@ -118,6 +128,11 @@ DEMO_USERS: dict[str, dict[str, Any]] = {
                 "qa_id": 3,
                 "question": "ベイズの定理は何を更新する？",
                 "answer": "事前確率を観測データに基づいて事後確率へ更新する。",
+                "explanation": (
+                    "最初に持っている仮説の確率が事前確率です。新しい観測が得られたら、"
+                    "その観測が各仮説のもとでどれくらい起こりやすいかを使って、より妥当な"
+                    "事後確率へ更新します。"
+                ),
                 "subject_id": 4,
                 "memo_id": 5,
             },
